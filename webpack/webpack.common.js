@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
+const path = require('path');
 const deps = require("../package.json").dependencies;
 module.exports = (env,localtest) => {
   const consumReactTsURL = localtest && localtest==='true' ? env['appConfig']['consumReactTsURL_forLocalTest'] :env['appConfig']['consumReactTsURL']; 
@@ -13,6 +13,9 @@ module.exports = (env,localtest) => {
   
     resolve: {
       extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+      alias:{
+        '@': path.resolve(__dirname, '..' , 'src')
+      }
     },
   
     devServer: {
