@@ -53,6 +53,7 @@ module.exports = (env,localtest) => {
         filename: "remoteReactTsEntry.js",
         remotes: {
           'remoteReactTs': `remoteReactTs@${consumReactTsURL}/remoteReactTsEntry.js`,
+          'remoteVueJs': `remoteVueJs@${consumVueJsURL}/remoteVueJsEntry.js`,
         },
         exposes: {},
         shared: {
